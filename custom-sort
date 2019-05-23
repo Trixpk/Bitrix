@@ -1,0 +1,32 @@
+<?php
+
+// подключаем prolog bitrix 
+require $_SERVER["DOCUMENT_ROOT"] . '/bitrix/modules/main/include/prolog_before.php';
+// // подключаем нужные модули
+// CModule::IncludeModule("iblock");
+// CModule::IncludeModule("sales");
+ 
+// $el = new CIBlockElement;
+ 
+// $arSelect = array("IBLOCK_ID", "ID", "SORT", "PROPERTY_CML2_ARTICLE", "NAME");
+// /**
+//  * Меняем индекс сортировки товарам, у которых артикул начинается с AU
+//  */
+// function showItem()
+// {
+// 	global $el, $arSelect;
+ 
+// 	$arFilter = array("IBLOCK_ID" => 32);
+// 	$res = $el->GetList(array(), $arFilter, false, false, $arSelect);
+ 
+// 	while ($r = $res->GetNext()) {
+// 	    //$el->Update($r['ID'], array("SORT" => 1));
+// 		$article_start = substr($r['PROPERTY_CML2_ARTICLE_VALUE'], 0, 2);
+
+// 		if($article_start == "AU") {
+// 			$el->Update($r['ID'], array("SORT" => 1));
+// 		}
+// 	}
+// }
+ 
+// showItem();
