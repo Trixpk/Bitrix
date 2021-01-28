@@ -1,0 +1,14 @@
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+  RewriteRule ^index\.php$ https://conversite.ru/ [R=301,L]
+
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/(.*)$
+  RewriteRule (^|.*?/)index\.php$ http://%{HTTP_HOST}/$1 [R=301,QSA,L]
+
+  RewriteCond %{HTTP_HOST} ^www.conversite.ru$ [NC]
+  RewriteRule ^(.*)$ https://conversite.ru/$1 [R=301,L]
+
+
+  RewriteCond %{HTTPS} off 
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https 
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
